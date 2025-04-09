@@ -47,12 +47,15 @@ class _calculatorState extends State<calculator> {
 
 Widget CustomOutlineButton(String value ){
   return Expanded(child:
-    OutlinedButton(
-      onPressed: ()=>
-        btnClicked(value),
-
-      child: Text(value,
-        style: TextStyle(fontSize: 25),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: OutlinedButton(
+        onPressed: ()=>
+          btnClicked(value),
+         style: OutlinedButton.styleFrom(backgroundColor: Colors.grey,overlayColor: Colors.black ),
+        child: Text(value,
+          style: TextStyle(fontSize: 25,color:Colors.black ),
+        ),
       ),
     ),
   );
@@ -60,23 +63,33 @@ Widget CustomOutlineButton(String value ){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CALCULATOR'),),
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text('CASIO',style: TextStyle(color: Colors.white),),),
       body:Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
           children: [
-            Expanded(child: Container(
-              color: Colors.blue,
-              padding: EdgeInsets.all(10),
-              alignment: Alignment.bottomRight,
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                height: 250,
+                color: Colors.white54,
+                padding: EdgeInsets.all(10),
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
+                  ),
                 ),
               ),
-            )),
+            ),
             Row(
               children: [
                 CustomOutlineButton("9"),

@@ -13,8 +13,6 @@ class calc extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CALCULATOR',
-      theme: ThemeData(
-        primaryColor: Colors.amber),
       home: calculator(),
       );
 
